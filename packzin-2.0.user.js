@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Packzin 2.0 — Interface & Lives
 // @namespace    local.packzin.experience
-// @version      4.4.4
+// @version      4.4.5
 // @description  Temas refinados, logos oficiais, PiP por câmera, mosaico e áudio acessível nas lives.
 // @match        https://packzin.com.br/*
 // @match        https://www.packzin.com.br/*
@@ -1131,7 +1131,10 @@
         const actions=tabs?.closest('[data-pz-feed-actions-block]');
         const posts=actions?.nextElementSibling;
         if(posts){posts.dataset.pzFeedPosts='true';const grid=posts.querySelector(':scope > .MuiGrid-container');if(grid)grid.dataset.pzFeedPostsGrid='true';}
-        const column=feed.closest('.MuiGrid-item');
+        let column=feed.closest('.MuiGrid-item');
+        for(let node=feed;node&&node.parentElement;node=node.parentElement){
+          if(node.parentElement.matches('[data-pz-rails-layout]')){column=node;break;}
+        }
         if(column)column.dataset.pzFeedColumn='true';
       }
     }
