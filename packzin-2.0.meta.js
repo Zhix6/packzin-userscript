@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Packzin 2.0 — Interface & Lives
 // @namespace    local.packzin.experience
-// @version      4.4.10
+// @version      4.4.11
 // @description  Temas refinados, logos oficiais, PiP por câmera, mosaico e áudio acessível nas lives.
 // @match        https://packzin.com.br/*
 // @match        https://www.packzin.com.br/*
